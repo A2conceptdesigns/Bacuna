@@ -210,28 +210,33 @@ function reelScrub(){
 
   const meter=document.querySelector('.reel-meter i');
   const state=document.querySelector('.reel-state');
-  let dur=0, ready=false, cur=0;
+  let dur=0, ready=false, lastSeek=-1, pending=false;
   v.muted=true; v.pause(); v.preload='auto';
+  const fast = typeof v.fastSeek==='function';   // Safari/FF: cheap keyframe seeks
   function ok(){ if(v.duration && isFinite(v.duration)){ dur=v.duration; ready=true; try{v.currentTime=0.001;}catch(e){} } }
   v.addEventListener('loadedmetadata',ok);
   v.addEventListener('loadeddata',ok);
   if(v.readyState>=1) ok();
 
   function prog(){ const r=track.getBoundingClientRect(); const tot=r.height-window.innerHeight; return tot>0?cl(-r.top/tot,0,1):0; }
-  function loop(){
-    if(ready){
-      const p=prog();
-      const target=cl(p*dur, 0, dur-0.02);
-      cur += (target-cur)*0.16;                 // ease toward scroll target
-      if(Math.abs(target-cur)<0.008) cur=target;
-      if(!v.seeking){ try{ v.currentTime=cur; }catch(e){} }
-      if(meter) meter.style.width=(p*100).toFixed(1)+'%';
-      if(state) state.textContent = p<0.02?'Assembled' : p>0.98?'Fully exploded' : 'Disassembling — '+Math.round(p*100)+'%';
+  // Event-driven + throttled: only seek when the target moved meaningfully,
+  // and never while a previous seek is still in flight (kills the lag).
+  function apply(){
+    pending=false;
+    if(!ready) return;
+    const p=prog();
+    const target=cl(p*dur, 0, dur-0.05);
+    if(!v.seeking && Math.abs(target-lastSeek) > 0.05){
+      lastSeek=target;
+      if(fast) v.fastSeek(target); else { try{ v.currentTime=target; }catch(e){} }
     }
-    requestAnimationFrame(loop);
+    if(meter) meter.style.width=(p*100).toFixed(1)+'%';
+    if(state) state.textContent = p<0.02?'Assembled' : p>0.98?'Fully exploded' : 'Disassembling — '+Math.round(p*100)+'%';
   }
-  requestAnimationFrame(loop);
-  // nudge the browser to fetch frames
+  function onScroll(){ if(!pending){ pending=true; requestAnimationFrame(apply); } }
+  addEventListener('scroll', onScroll, {passive:true});
+  addEventListener('resize', onScroll);
+  const warm=setInterval(()=>{ if(ready){ apply(); clearInterval(warm); } }, 120);
   v.load();
 }
 
