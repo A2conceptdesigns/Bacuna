@@ -89,9 +89,9 @@ section{padding-block:clamp(70px,10vw,150px)}
 /* ---------- Buttons ---------- */
 .btn{display:inline-flex;align-items:center;gap:.7em;font-size:.82rem;letter-spacing:.08em;
   text-transform:uppercase;font-weight:600;padding:1.05em 2em;border-radius:44px;
-  background:var(--ink);color:var(--paper);transition:.4s var(--ease);border:1px solid var(--ink)}
-.btn:hover{background:var(--clay);border-color:var(--clay);transform:translateY(-2px)}
-.btn.ghost{background:transparent;color:var(--ink)}
+  background:var(--clay);color:var(--white);transition:.4s var(--ease);border:1px solid var(--clay)}
+.btn:hover{background:var(--ink);border-color:var(--ink);color:var(--white);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
 .btn.ghost:hover{background:var(--ink);color:var(--paper)}
 .btn .arrow{transition:transform .4s var(--ease)}
 .btn:hover .arrow{transform:translateX(5px)}
@@ -191,10 +191,15 @@ section{padding-block:clamp(70px,10vw,150px)}
 .reel-meter{width:220px;max-width:60vw;height:3px;background:var(--line);position:relative;overflow:hidden}
 .reel-meter i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--clay)}
 .reel-hint{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+/* On touch/mobile the reel auto-plays (scroll-scrub is unreliable there) */
 @media (max-width:760px){
-  .reel-track{height:300vh}
-  .reel-copy{max-width:none;right:var(--gutter)}
+  .reel-track{height:auto}
+  .reel-stage{position:static;height:auto;flex-direction:column;justify-content:flex-start;
+    padding:calc(var(--nav-h) + 4vh) var(--gutter) 6vh;gap:1.3rem}
+  .reel-copy{position:static;max-width:none;pointer-events:auto}
   .reel-copy h2{font-size:clamp(1.8rem,7vw,2.4rem)}
+  .reel-video{height:auto;width:100%;max-height:66vh}
+  .reel-hud{display:none}
 }
 
 /* ---------- SCROLL-SCRUB EXPLODED HOUSE (anatomy) ---------- */
@@ -385,6 +390,12 @@ body.cine .nav:not(.scrolled) .burger span{background:var(--paper)}
   color:var(--paper);background:rgba(20,17,16,.4);backdrop-filter:blur(6px);padding:.3em .8em;border-radius:30px;
   opacity:0;transition:.5s var(--ease)}
 .card:hover .yr{opacity:1}
+/* Touch devices have no hover — always show project info + animate cards in */
+@media (hover:none){
+  .card .meta{opacity:1;transform:none}
+  .card .yr{opacity:1}
+  .card img{filter:grayscale(0)}
+}
 
 /* Filter chips */
 .filters{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2.5rem}
@@ -405,7 +416,7 @@ body.cine .nav:not(.scrolled) .burger span{background:var(--paper)}
 .band{background:var(--ink);color:var(--paper)}
 .band .stat .num{color:var(--white)}
 .band .stat .lbl{color:var(--sand)}
-.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
 .stat-grid .stat .num{font-size:clamp(2.5rem,5vw,4.2rem)}
 
 /* ---------- Process steps ---------- */
@@ -422,7 +433,7 @@ body.cine .nav:not(.scrolled) .burger span{background:var(--paper)}
 /* ---------- CTA ---------- */
 .cta-big{text-align:center;padding-block:clamp(80px,12vw,180px)}
 .cta-big h2{font-size:clamp(2.6rem,9vw,8rem);line-height:.95}
-.cta-big a{color:var(--ink);position:relative;display:inline-block}
+.cta-big a:not(.btn){color:var(--ink);position:relative;display:inline-block}
 .cta-big a .u{display:inline-block;position:relative}
 .cta-big a .u::after{content:"";position:absolute;left:0;bottom:.08em;height:3px;width:100%;background:var(--clay);
   transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}

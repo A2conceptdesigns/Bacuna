@@ -195,6 +195,19 @@ function reelScrub(){
   const v=document.getElementById('reelVideo');
   if(!track||!v) return;
   const cl=(x,a,b)=>Math.max(a,Math.min(b,x));
+
+  // On touch / small screens, scroll-scrubbing a video is unreliable —
+  // just auto-play the render on a loop so the animation is always visible.
+  const touch = matchMedia('(hover:none)').matches || matchMedia('(max-width:760px)').matches;
+  if(touch){
+    v.muted=true; v.loop=true; v.setAttribute('playsinline','');
+    const start=()=>{ const p=v.play(); if(p&&p.catch) p.catch(()=>{}); };
+    const io=new IntersectionObserver(es=>{ es.forEach(e=>{ e.isIntersecting?start():v.pause(); }); },{threshold:.25});
+    io.observe(v);
+    start();
+    return;
+  }
+
   const meter=document.querySelector('.reel-meter i');
   const state=document.querySelector('.reel-state');
   let dur=0, ready=false, cur=0;
