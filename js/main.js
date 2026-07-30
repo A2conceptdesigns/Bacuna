@@ -189,55 +189,15 @@ function cineHero(){
   setInterval(go, DUR);
 }
 
-/* ---- Scroll-scrubbed render reel (explode + rotate on scroll) ---- */
+/* ---- Render reel: smooth native autoplay when it scrolls into view
+       (no frame-by-frame scrubbing = no stutter) ---- */
 function reelScrub(){
-  const track=document.querySelector('.reel-track');
   const v=document.getElementById('reelVideo');
-  if(!track||!v) return;
-  const cl=(x,a,b)=>Math.max(a,Math.min(b,x));
-
-  // On touch / small screens, scroll-scrubbing a video is unreliable —
-  // just auto-play the render on a loop so the animation is always visible.
-  const touch = matchMedia('(hover:none)').matches || matchMedia('(max-width:760px)').matches;
-  if(touch){
-    v.muted=true; v.loop=true; v.setAttribute('playsinline','');
-    const start=()=>{ const p=v.play(); if(p&&p.catch) p.catch(()=>{}); };
-    const io=new IntersectionObserver(es=>{ es.forEach(e=>{ e.isIntersecting?start():v.pause(); }); },{threshold:.25});
-    io.observe(v);
-    start();
-    return;
-  }
-
-  const meter=document.querySelector('.reel-meter i');
-  const state=document.querySelector('.reel-state');
-  let dur=0, ready=false, lastSeek=-1, pending=false;
-  v.muted=true; v.pause(); v.preload='auto';
-  const fast = typeof v.fastSeek==='function';   // Safari/FF: cheap keyframe seeks
-  function ok(){ if(v.duration && isFinite(v.duration)){ dur=v.duration; ready=true; try{v.currentTime=0.001;}catch(e){} } }
-  v.addEventListener('loadedmetadata',ok);
-  v.addEventListener('loadeddata',ok);
-  if(v.readyState>=1) ok();
-
-  function prog(){ const r=track.getBoundingClientRect(); const tot=r.height-window.innerHeight; return tot>0?cl(-r.top/tot,0,1):0; }
-  // Event-driven + throttled: only seek when the target moved meaningfully,
-  // and never while a previous seek is still in flight (kills the lag).
-  function apply(){
-    pending=false;
-    if(!ready) return;
-    const p=prog();
-    const target=cl(p*dur, 0, dur-0.05);
-    if(!v.seeking && Math.abs(target-lastSeek) > 0.05){
-      lastSeek=target;
-      if(fast) v.fastSeek(target); else { try{ v.currentTime=target; }catch(e){} }
-    }
-    if(meter) meter.style.width=(p*100).toFixed(1)+'%';
-    if(state) state.textContent = p<0.02?'Assembled' : p>0.98?'Fully exploded' : 'Disassembling — '+Math.round(p*100)+'%';
-  }
-  function onScroll(){ if(!pending){ pending=true; requestAnimationFrame(apply); } }
-  addEventListener('scroll', onScroll, {passive:true});
-  addEventListener('resize', onScroll);
-  const warm=setInterval(()=>{ if(ready){ apply(); clearInterval(warm); } }, 120);
-  v.load();
+  if(!v) return;
+  v.muted=true; v.loop=true; v.setAttribute('playsinline','');
+  const play=()=>{ const p=v.play(); if(p&&p.catch) p.catch(()=>{}); };
+  const io=new IntersectionObserver(es=>{ es.forEach(e=>{ e.isIntersecting?play():v.pause(); }); },{threshold:.2});
+  io.observe(v);
 }
 
 /* ---- Init ---- */
