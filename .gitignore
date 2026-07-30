@@ -1,0 +1,14 @@
+# Local tooling / editor
+.claude/
+.vscode/
+.idea/
+
+# Scratch / temp files
+_*.html
+*.log
+*.tmp
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini

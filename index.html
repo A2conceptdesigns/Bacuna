@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bacuña Architecture — Design & Build Studio</title>
+<meta name="description" content="Bacuña Architecture is a design-and-build studio crafting considered homes, workplaces and public spaces.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=6">
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="xhero wrap">
+  <div class="blueprint"></div>
+
+  <div class="xhero-copy">
+    <span class="eyebrow">Design &amp; Build Studio · Est. 2009</span>
+    <h1>
+      <span class="line"><span>Every house is</span></span>
+      <span class="line"><span>a hundred</span></span>
+      <span class="line"><span><em class="italic">careful layers.</em></span></span>
+    </h1>
+    <div class="hero-sub reveal d1">
+      <p class="lede">From the foundation to the roof, Bacuña designs and builds every layer of your home — and stands behind all of them.</p>
+    </div>
+    <div class="hero-sub reveal d2">
+      <a href="projects.html" class="btn">View projects <span class="arrow">→</span></a>
+      <a href="services.html" class="btn ghost">Our services <span class="arrow">→</span></a>
+    </div>
+    <div class="hero-stats reveal d3">
+      <div class="stat"><div class="num"><span data-count="180" data-suffix="+">0</span></div><div class="lbl">Projects delivered</div></div>
+      <div class="stat"><div class="num"><span data-count="17" data-suffix="">0</span></div><div class="lbl">Years of practice</div></div>
+      <div class="stat"><div class="num"><span data-count="24" data-suffix="">0</span></div><div class="lbl">Design awards</div></div>
+    </div>
+  </div>
+
+  <!-- Exploded architectural animation (rendered video) -->
+  <div class="xvideo" aria-hidden="true">
+    <video class="xvideo-el" autoplay muted loop playsinline preload="auto">
+      <source src="assets/exploded.mp4" type="video/mp4">
+    </video>
+  </div>
+</header>
+
+<!-- ============ INTRO / SPLIT ============ -->
+<section class="wrap" id="intro">
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow reveal">The studio</span>
+      <h2 class="reveal d1" style="margin-top:1rem;max-width:16ch">We turn ground and light into architecture.</h2>
+    </div>
+    <span class="idx reveal d2">( 01 — Studio )</span>
+  </div>
+  <div class="split">
+    <div class="reveal">
+      <p class="lede">Founded by architect <b>Miguel Bacuña</b>, our studio unites design and construction under one roof — so the idea you fall in love with is the building you move into. No lost intent between drawing and delivery.</p>
+      <p style="margin-top:1.5rem;color:var(--muted);max-width:50ch">We work at every scale, from private homes to civic landmarks, guided by a belief that good architecture is quiet, generous and made to last generations.</p>
+      <div class="steps" style="margin-top:3rem;grid-template-columns:1fr 1fr">
+        <div class="step"><span class="no">— Ethos</span><h3>Considered</h3><p>Every wall earns its place.</p></div>
+        <div class="step"><span class="no">— Craft</span><h3>Built well</h3><p>Detailed to the millimetre.</p></div>
+      </div>
+    </div>
+    <div class="media reveal d2" style="overflow:hidden">
+      <img data-parallax=".08" class="parallax-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Modern concrete home">
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="wrap band" style="border-radius:0">
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow reveal" style="color:var(--sand)">What we do</span>
+      <h2 class="reveal d1" style="margin-top:1rem;color:var(--paper)">Services</h2>
+    </div>
+    <span class="idx reveal d2" style="color:var(--sand)">( 02 — Capabilities )</span>
+  </div>
+  <div class="svc-list" style="border-color:#33302c">
+    <a class="svc-row reveal" href="services.html" style="border-color:#33302c">
+      <span class="no" style="color:var(--sand)">01</span>
+      <div><h3 style="color:var(--paper)">Architectural Design</h3></div>
+      <span class="plus">+</span>
+    </a>
+    <a class="svc-row reveal d1" href="services.html" style="border-color:#33302c">
+      <span class="no" style="color:var(--sand)">02</span>
+      <div><h3 style="color:var(--paper)">Design &amp; Build</h3></div>
+      <span class="plus">+</span>
+    </a>
+    <a class="svc-row reveal d2" href="services.html" style="border-color:#33302c">
+      <span class="no" style="color:var(--sand)">03</span>
+      <div><h3 style="color:var(--paper)">Interior Architecture</h3></div>
+      <span class="plus">+</span>
+    </a>
+    <a class="svc-row reveal d3" href="services.html" style="border-color:#33302c">
+      <span class="no" style="color:var(--sand)">04</span>
+      <div><h3 style="color:var(--paper)">Master Planning</h3></div>
+      <span class="plus">+</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ ANATOMY REEL (scroll-scrubbed render) ============ -->
+<section class="reel">
+  <div class="reel-track">
+    <div class="reel-stage">
+      <video class="reel-video" id="reelVideo" muted playsinline preload="auto" aria-hidden="true">
+        <source src="assets/rotating-explode.mp4" type="video/mp4">
+      </video>
+      <div class="reel-copy">
+        <span class="eyebrow">Anatomy of a home</span>
+        <h2>Scroll to take<br>the house <em class="italic">apart.</em></h2>
+        <p class="lede">Foundation to roof — eight considered layers, drawn, engineered and built by one studio. Scroll to separate them, scroll back to rebuild.</p>
+      </div>
+      <div class="reel-hud">
+        <span class="reel-state">Assembled</span>
+        <div class="reel-meter"><i></i></div>
+        <span class="reel-hint">Scroll to explore ↓</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PROJECTS ============ -->
+<section class="wrap">
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow reveal">Selected work</span>
+      <h2 class="reveal d1" style="margin-top:1rem">Featured projects</h2>
+    </div>
+    <a href="projects.html" class="btn ghost reveal d2">All projects <span class="arrow">→</span></a>
+  </div>
+
+  <div class="grid-projects">
+    <a class="card span7 reveal" href="projects.html">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80" alt="Ridgeline House"></div>
+      <span class="yr">2024</span>
+      <div class="meta"><div><span class="cat">Residential · Cebu</span><h3>Ridgeline House</h3></div><span>→</span></div>
+    </a>
+    <a class="card span5 tall reveal d1" href="projects.html">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=80" alt="Travertine Pavilion"></div>
+      <span class="yr">2023</span>
+      <div class="meta"><div><span class="cat">Hospitality</span><h3>Travertine Pavilion</h3></div><span>→</span></div>
+    </a>
+    <a class="card span5 reveal" href="projects.html">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80" alt="The Concrete Loft"></div>
+      <span class="yr">2024</span>
+      <div class="meta"><div><span class="cat">Interior</span><h3>The Concrete Loft</h3></div><span>→</span></div>
+    </a>
+    <a class="card span7 reveal d1" href="projects.html">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1400&q=80" alt="Harbour Offices"></div>
+      <span class="yr">2022</span>
+      <div class="meta"><div><span class="cat">Commercial</span><h3>Harbour Offices</h3></div><span>→</span></div>
+    </a>
+  </div>
+</section>
+
+<!-- ============ STATS BAND ============ -->
+<section class="band wrap">
+  <div class="stat-grid">
+    <div class="stat reveal"><div class="num"><span data-count="180" data-suffix="+">0</span></div><div class="lbl">Projects delivered</div></div>
+    <div class="stat reveal d1"><div class="num"><span data-count="640" data-suffix="k">0</span></div><div class="lbl">Sq. metres built</div></div>
+    <div class="stat reveal d2"><div class="num"><span data-count="17" data-suffix="">0</span></div><div class="lbl">Years in practice</div></div>
+    <div class="stat reveal d3"><div class="num"><span data-count="98" data-suffix="%">0</span></div><div class="lbl">On-time delivery</div></div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="wrap">
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow reveal">How we work</span>
+      <h2 class="reveal d1" style="margin-top:1rem">From blueprint to build</h2>
+    </div>
+    <span class="idx reveal d2">( 03 — Process )</span>
+  </div>
+  <div class="steps">
+    <div class="step reveal"><span class="no">STEP 01</span><h3>Listen</h3><p>We start with your site, budget and how you actually want to live or work.</p></div>
+    <div class="step reveal d1"><span class="no">STEP 02</span><h3>Design</h3><p>Concept, 3D studies and material palettes — refined until it feels inevitable.</p></div>
+    <div class="step reveal d2"><span class="no">STEP 03</span><h3>Build</h3><p>Our own site teams deliver the drawing exactly as designed, on schedule.</p></div>
+    <div class="step reveal d3"><span class="no">STEP 04</span><h3>Hand over</h3><p>We stay through snagging and beyond. A building should age gracefully.</p></div>
+  </div>
+</section>
+
+<!-- ============ QUOTE ============ -->
+<section class="wrap" style="background:var(--paper-2)">
+  <div class="split">
+    <div class="reveal">
+      <span class="eyebrow">Client, Ridgeline House</span>
+      <p class="quote" style="margin-top:1.5rem">“They designed it, they built it, and they meant every detail. We simply moved in.”</p>
+      <p class="quote-author">— Elena &amp; Marco R.</p>
+    </div>
+    <div class="media reveal d1" style="overflow:hidden">
+      <img data-parallax=".06" class="parallax-img" src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1200&q=80" alt="Interior living space">
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta-big wrap">
+  <span class="eyebrow reveal" style="justify-content:center">Have a site? Have a dream?</span>
+  <h2 class="reveal d1" style="margin-top:1.5rem">Let’s <a href="contact.html"><span class="u">build</span></a><br>something together.</h2>
+  <div class="reveal d2" style="margin-top:3rem">
+    <a href="contact.html" class="btn">Start a conversation <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<script src="js/main.js?v=6"></script>
+</body>
+</html>

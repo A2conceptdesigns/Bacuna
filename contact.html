@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact — Bacuña Architecture</title>
+<meta name="description" content="Start a project with Bacuña Architecture. Tell us about your site and your vision.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .success{display:none;padding:1.1em 1.4em;border:1px solid var(--clay);border-radius:6px;
+    background:rgba(180,85,46,.08);color:var(--clay-2);font-size:.95rem;margin-top:1rem}
+  .success.show{display:block;animation:riseUp .6s var(--ease)}
+</style>
+</head>
+<body>
+
+<section class="phead wrap">
+  <span class="crumb reveal"><a href="index.html">Home</a> / Contact</span>
+  <h1 class="reveal d1">Let’s <em class="italic">build</em>.</h1>
+  <p class="lede reveal d2" style="margin-top:1rem">Tell us about your site, your budget and how you want to live or work. We reply to every enquiry within two working days.</p>
+</section>
+
+<section class="wrap" style="padding-top:0">
+  <div class="contact-grid">
+    <!-- form -->
+    <form class="reveal" id="cform" novalidate>
+      <div class="field"><label>Your name</label><input type="text" name="name" placeholder="Jane Dela Cruz" required></div>
+      <div class="field"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div>
+      <div class="field"><label>Project type</label><input type="text" name="type" placeholder="New home · Renovation · Commercial…"></div>
+      <div class="field"><label>Estimated budget</label><input type="text" name="budget" placeholder="₱ range (optional)"></div>
+      <div class="field"><label>Tell us about it</label><textarea name="message" placeholder="Site location, size, timeline, what you dream of…" required></textarea></div>
+      <button type="submit" class="btn">Send enquiry <span class="arrow">→</span></button>
+      <div class="success" id="ok">Thank you — your enquiry is on its way. We’ll be in touch within two working days.</div>
+    </form>
+
+    <!-- info -->
+    <div class="reveal d1">
+      <span class="eyebrow">Studio</span>
+      <h2 style="margin-top:1rem;font-size:clamp(1.8rem,3.5vw,2.8rem)">Come by, or reach out.</h2>
+      <div style="margin-top:2rem">
+        <div class="info-row"><span class="k">Email</span><span class="v">studio@bacuna.arch</span></div>
+        <div class="info-row"><span class="k">Phone</span><span class="v">+63 917 000 0000</span></div>
+        <div class="info-row"><span class="k">Studio</span><span class="v">12 Gorordo Ave, Cebu City</span></div>
+        <div class="info-row"><span class="k">Hours</span><span class="v">Mon–Fri · 9–6</span></div>
+        <div class="info-row"><span class="k">Social</span><span class="v">Instagram ↗ · LinkedIn ↗</span></div>
+      </div>
+      <div class="media" style="margin-top:2.5rem;overflow:hidden;border-radius:2px">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80" alt="Bacuña studio interior">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-big wrap" style="padding-top:0">
+  <h2 class="reveal" style="font-size:clamp(2rem,6vw,5rem)">“ Good buildings come<br>from good <em class="italic">conversations</em>. ”</h2>
+</section>
+
+<script src="js/main.js"></script>
+<script>
+  document.getElementById('cform').addEventListener('submit',e=>{
+    e.preventDefault();
+    const f=e.target;
+    if(!f.checkValidity()){f.reportValidity();return;}
+    document.getElementById('ok').classList.add('show');
+    f.querySelector('button').textContent='Sent ✓';
+    setTimeout(()=>f.reset(),300);
+  });
+</script>
+</body>
+</html>

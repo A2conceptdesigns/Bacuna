@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Services — Bacuña Architecture</title>
+<meta name="description" content="Architectural design, design-and-build, interiors and master planning from one integrated studio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .svc-full{display:grid;grid-template-columns:80px 1fr auto;gap:2rem;align-items:start;
+    padding:clamp(2rem,4vw,3.4rem) 0;border-bottom:1px solid var(--line)}
+  .svc-full:first-child{border-top:1px solid var(--line)}
+  .svc-full .no{font-family:var(--mono);font-size:.9rem;color:var(--clay)}
+  .svc-full h3{font-size:clamp(1.6rem,3vw,2.6rem);margin-bottom:1rem}
+  .svc-full p{color:var(--muted);max-width:56ch}
+  .svc-full ul{list-style:none;margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.6rem}
+  .svc-full li{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    border:1px solid var(--line);border-radius:30px;padding:.5em 1em;color:var(--ink-2)}
+  .svc-full .price{font-family:var(--display);font-size:1.3rem;white-space:nowrap;text-align:right}
+  .svc-full .price small{display:block;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:.4em}
+  @media(max-width:760px){.svc-full{grid-template-columns:1fr}.svc-full .price{text-align:left}}
+  .blue-detail svg{width:100%;height:auto}
+  .bd-line{stroke:var(--ink);stroke-width:1.6;fill:none;stroke-dasharray:1;stroke-dashoffset:1;pathLength:1}
+  .blue-detail.in .bd-line{animation:draw 1.6s var(--ease) forwards}
+  .blue-detail.in .bd-line:nth-child(2){animation-delay:.15s}
+  .blue-detail.in .bd-line:nth-child(3){animation-delay:.3s}
+  .blue-detail.in .bd-line:nth-child(4){animation-delay:.45s}
+  .blue-detail.in .bd-line:nth-child(5){animation-delay:.6s}
+  .blue-detail.in .bd-line:nth-child(6){animation-delay:.75s}
+  .blue-detail.in .bd-line:nth-child(7){animation-delay:.9s}
+</style>
+</head>
+<body>
+
+<section class="phead wrap">
+  <span class="crumb reveal"><a href="index.html">Home</a> / Services</span>
+  <h1 class="reveal d1">Everything from<br>line to <em class="italic">building</em>.</h1>
+  <p class="lede reveal d2" style="margin-top:1rem">One studio, four disciplines, no handoffs. We hold the vision from first sketch to final key.</p>
+</section>
+
+<!-- animated blueprint feature -->
+<section class="wrap" style="padding-top:0">
+  <div class="split" style="align-items:center">
+    <div class="blue-detail reveal" style="overflow:hidden">
+      <svg viewBox="0 0 500 340" role="img" aria-label="Blueprint detail">
+        <line class="bd-line" pathLength="1" x1="40" y1="300" x2="470" y2="300"/>
+        <path class="bd-line" pathLength="1" d="M70 300 V120 H250 V300"/>
+        <path class="bd-line" pathLength="1" d="M60 130 L160 60 L260 130"/>
+        <rect class="bd-line" pathLength="1" x="100" y="170" width="50" height="50"/>
+        <rect class="bd-line" pathLength="1" x="175" y="170" width="50" height="80"/>
+        <path class="bd-line" pathLength="1" d="M300 300 V190 H440 V300 M300 210 H440 M370 210 V300"/>
+        <path class="bd-line" pathLength="1" d="M300 190 L370 140 L440 190"/>
+      </svg>
+    </div>
+    <div class="reveal d1">
+      <span class="eyebrow">Integrated practice</span>
+      <h2 style="margin-top:1rem;max-width:14ch">Design and construction, in one hand.</h2>
+      <p class="lede" style="margin-top:1.5rem">Most projects lose their soul in the gap between architect and contractor. We closed that gap by being both — protecting your design, budget and timeline the whole way through.</p>
+    </div>
+  </div>
+</section>
+
+<!-- services list -->
+<section class="wrap" style="padding-top:0">
+  <div class="svc-full reveal">
+    <span class="no">01</span>
+    <div>
+      <h3>Architectural Design</h3>
+      <p>Concept through construction documents. We shape the idea, test it in 3D, and detail it into a set that builds cleanly.</p>
+      <ul><li>Feasibility</li><li>Concept design</li><li>3D &amp; VR studies</li><li>Permit drawings</li><li>Construction docs</li></ul>
+    </div>
+    <div class="price">From site study<small>Scoped per project</small></div>
+  </div>
+  <div class="svc-full reveal">
+    <span class="no">02</span>
+    <div>
+      <h3>Design &amp; Build</h3>
+      <p>Our signature. One contract, one team, one point of accountability — from the first line to handing you the keys.</p>
+      <ul><li>Single contract</li><li>In-house site teams</li><li>Cost certainty</li><li>Fixed timeline</li><li>Quality control</li></ul>
+    </div>
+    <div class="price">Turnkey<small>Most popular</small></div>
+  </div>
+  <div class="svc-full reveal">
+    <span class="no">03</span>
+    <div>
+      <h3>Interior Architecture</h3>
+      <p>Rooms designed as carefully as the shell around them — joinery, lighting, material and furniture as one composition.</p>
+      <ul><li>Space planning</li><li>Bespoke joinery</li><li>Lighting design</li><li>FF&amp;E</li><li>Styling</li></ul>
+    </div>
+    <div class="price">Full or partial<small>Fit-out</small></div>
+  </div>
+  <div class="svc-full reveal">
+    <span class="no">04</span>
+    <div>
+      <h3>Master Planning</h3>
+      <p>For estates, resorts and campuses — organising land, movement and buildings into a coherent, phaseable whole.</p>
+      <ul><li>Land use</li><li>Phasing strategy</li><li>Landscape framework</li><li>Urban design</li><li>Sustainability</li></ul>
+    </div>
+    <div class="price">Multi-phase<small>Large scale</small></div>
+  </div>
+</section>
+
+<!-- process band -->
+<section class="wrap band">
+  <div class="sec-head"><div><span class="eyebrow reveal" style="color:var(--sand)">The journey</span>
+  <h2 class="reveal d1" style="color:var(--paper);margin-top:1rem">A clear path, every time</h2></div></div>
+  <div class="steps">
+    <div class="step reveal" style="border-color:var(--clay)"><span class="no">01</span><h3 style="color:var(--paper)">Discovery</h3><p style="color:var(--sand)">Brief, budget and site walk. We listen before we draw.</p></div>
+    <div class="step reveal d1" style="border-color:var(--clay)"><span class="no">02</span><h3 style="color:var(--paper)">Design</h3><p style="color:var(--sand)">Concept to documents, reviewed together at each stage.</p></div>
+    <div class="step reveal d2" style="border-color:var(--clay)"><span class="no">03</span><h3 style="color:var(--paper)">Construction</h3><p style="color:var(--sand)">Our teams build it, with weekly progress you can see.</p></div>
+    <div class="step reveal d3" style="border-color:var(--clay)"><span class="no">04</span><h3 style="color:var(--paper)">Handover</h3><p style="color:var(--sand)">Snagging, warranty and a building ready to live in.</p></div>
+  </div>
+</section>
+
+<section class="cta-big wrap">
+  <span class="eyebrow reveal" style="justify-content:center">Ready when you are</span>
+  <h2 class="reveal d1" style="margin-top:1.5rem">Tell us about<br>your <a href="contact.html"><span class="u">project</span></a>.</h2>
+  <div class="reveal d2" style="margin-top:3rem"><a href="contact.html" class="btn">Get a proposal <span class="arrow">→</span></a></div>
+</section>
+
+<script src="js/main.js"></script>
+</body>
+</html>

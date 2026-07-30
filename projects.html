@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projects — Bacuña Architecture</title>
+<meta name="description" content="The full index of homes, workplaces, hospitality and civic work by Bacuña Architecture.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=6">
+</head>
+<body>
+
+<section class="phead wrap">
+  <span class="crumb reveal"><a href="index.html">Home</a> / Projects</span>
+  <h1 class="reveal d1">The <em class="italic">index</em>.</h1>
+  <p class="lede reveal d2" style="margin-top:1rem">Seventeen years, one hundred and eighty buildings. A selection of what we’ve designed and built.</p>
+</section>
+
+<!-- ============ ANATOMY REEL (scroll-scrubbed render) ============ -->
+<section class="reel">
+  <div class="reel-track">
+    <div class="reel-stage">
+      <video class="reel-video" id="reelVideo" muted playsinline preload="auto" aria-hidden="true">
+        <source src="assets/rotating-explode.mp4" type="video/mp4">
+      </video>
+      <div class="reel-copy">
+        <span class="eyebrow">Anatomy of a home</span>
+        <h2>Scroll to take<br>the house <em class="italic">apart.</em></h2>
+        <p class="lede">Behind every finished project is a build-up of eight considered layers. Scroll to separate them, scroll back to rebuild.</p>
+      </div>
+      <div class="reel-hud">
+        <span class="reel-state">Assembled</span>
+        <div class="reel-meter"><i></i></div>
+        <span class="reel-hint">Scroll to explore ↓</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" style="padding-top:0">
+  <div class="filters reveal">
+    <button class="chip active" data-filter="all">All</button>
+    <button class="chip" data-filter="residential">Residential</button>
+    <button class="chip" data-filter="commercial">Commercial</button>
+    <button class="chip" data-filter="hospitality">Hospitality</button>
+    <button class="chip" data-filter="interior">Interior</button>
+  </div>
+
+  <div class="grid-projects">
+    <a class="card span6 reveal" data-cat="residential" href="#"><div class="ph"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80" alt="Ridgeline House"></div><span class="yr">2024</span><div class="meta"><div><span class="cat">Residential · Cebu</span><h3>Ridgeline House</h3></div><span>→</span></div></a>
+    <a class="card span6 reveal d1" data-cat="hospitality" href="#"><div class="ph"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80" alt="Travertine Pavilion"></div><span class="yr">2023</span><div class="meta"><div><span class="cat">Hospitality · Mactan</span><h3>Travertine Pavilion</h3></div><span>→</span></div></a>
+    <a class="card span4 reveal" data-cat="interior" href="#"><div class="ph"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80" alt="The Concrete Loft"></div><span class="yr">2024</span><div class="meta"><div><span class="cat">Interior</span><h3>The Concrete Loft</h3></div><span>→</span></div></a>
+    <a class="card span4 reveal d1" data-cat="commercial" href="#"><div class="ph"><img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1000&q=80" alt="Harbour Offices"></div><span class="yr">2022</span><div class="meta"><div><span class="cat">Commercial</span><h3>Harbour Offices</h3></div><span>→</span></div></a>
+    <a class="card span4 reveal d2" data-cat="residential" href="#"><div class="ph"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80" alt="Courtyard House"></div><span class="yr">2023</span><div class="meta"><div><span class="cat">Residential</span><h3>Courtyard House</h3></div><span>→</span></div></a>
+    <a class="card span5 reveal" data-cat="residential" href="#"><div class="ph"><img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=80" alt="Slate Residence"></div><span class="yr">2021</span><div class="meta"><div><span class="cat">Residential</span><h3>Slate Residence</h3></div><span>→</span></div></a>
+    <a class="card span7 reveal d1" data-cat="commercial" href="#"><div class="ph"><img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1400&q=80" alt="Atrium Offices"></div><span class="yr">2022</span><div class="meta"><div><span class="cat">Commercial</span><h3>Atrium Offices</h3></div><span>→</span></div></a>
+    <a class="card span7 reveal" data-cat="hospitality" href="#"><div class="ph"><img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1400&q=80" alt="Cliff Villas"></div><span class="yr">2020</span><div class="meta"><div><span class="cat">Hospitality</span><h3>Cliff Villas</h3></div><span>→</span></div></a>
+    <a class="card span5 reveal d1" data-cat="interior" href="#"><div class="ph"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80" alt="Warm Minimal Interior"></div><span class="yr">2023</span><div class="meta"><div><span class="cat">Interior</span><h3>Nord Apartment</h3></div><span>→</span></div></a>
+    <a class="card span4 reveal" data-cat="residential" href="#"><div class="ph"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1000&q=80" alt="Timber House"></div><span class="yr">2019</span><div class="meta"><div><span class="cat">Residential</span><h3>Timber House</h3></div><span>→</span></div></a>
+    <a class="card span4 reveal d1" data-cat="commercial" href="#"><div class="ph"><img src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=1000&q=80" alt="The Foundry"></div><span class="yr">2021</span><div class="meta"><div><span class="cat">Commercial</span><h3>The Foundry</h3></div><span>→</span></div></a>
+    <a class="card span4 reveal d2" data-cat="hospitality" href="#"><div class="ph"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80" alt="Lagoon Retreat"></div><span class="yr">2020</span><div class="meta"><div><span class="cat">Hospitality</span><h3>Lagoon Retreat</h3></div><span>→</span></div></a>
+  </div>
+</section>
+
+<section class="band wrap">
+  <div class="stat-grid">
+    <div class="stat reveal"><div class="num"><span data-count="180" data-suffix="+">0</span></div><div class="lbl">Projects delivered</div></div>
+    <div class="stat reveal d1"><div class="num"><span data-count="9" data-suffix="">0</span></div><div class="lbl">Provinces</div></div>
+    <div class="stat reveal d2"><div class="num"><span data-count="24" data-suffix="">0</span></div><div class="lbl">Awards</div></div>
+    <div class="stat reveal d3"><div class="num"><span data-count="17" data-suffix="">0</span></div><div class="lbl">Years</div></div>
+  </div>
+</section>
+
+<section class="cta-big wrap">
+  <span class="eyebrow reveal" style="justify-content:center">Your project could be next</span>
+  <h2 class="reveal d1" style="margin-top:1.5rem">Let’s add <a href="contact.html"><span class="u">yours</span></a>.</h2>
+  <div class="reveal d2" style="margin-top:3rem"><a href="contact.html" class="btn">Start a project <span class="arrow">→</span></a></div>
+</section>
+
+<script src="js/main.js?v=6"></script>
+</body>
+</html>
